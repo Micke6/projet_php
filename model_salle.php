@@ -14,14 +14,14 @@ class Salle{
 
     public function insert_salle(){
         $this->connect->start_connection();
-        $requete=$this->connect->connex->prepare("INSERT INTO salle VALUES(?,?,?)");
+        $requete=$this->connect->connex->prepare("INSERT INTO SALLE VALUES(?,?,?)");
         $requete->execute([$this->id_salle,$this->Design,$this->occupation]);
         $this->connect->end_connection();
     }
 
     public function list_salle(){
         $this->connect->start_connection();
-        $requete=$this->connect->connex->query("SELECT * FROM salle");
+        $requete=$this->connect->connex->query("SELECT * FROM SALLE");
         $list=$requete->fetchAll(PDO::FETCH_ASSOC);
         print_r($list);
         $this->connect->end_connection();
@@ -29,18 +29,19 @@ class Salle{
 
     public function update_salle(){
         $this->connect->start_connection();
-        $requete=$this->connect->connex->prepare("UPDATE salle SET Design = ?, occupation = ? WHERE idsalle=?");
+        $requete=$this->connect->connex->prepare("UPDATE SALLE SET Design = ?, occupation = ? WHERE idsalle=?");
         $requete->execute([$this->Design,$this->occupation,$this->id_salle]);
         $this->connect->end_connection();
     }
 
     public function delete_salle(){
         $this->connect->start_connection();
-        $requete=$this->connect->connex->prepare("DELETE FROM salle WHERE idsalle=?");
+        $requete=$this->connect->connex->prepare("DELETE FROM SALLE WHERE idsalle=?");
         $requete->execute([$this->id_salle]);
         $this->connect->end_connection();
     }
 };
-
+$S1= new Salle(1,"102","libre");
+$S1->insert_salle(); 
 
 ?>
