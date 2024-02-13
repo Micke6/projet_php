@@ -4,7 +4,7 @@ class EDT{
     private $id_prof, $idsalle, $idclasse, $cours,$date_edt;
     public $connect;
 
-    public function __construct( $date_edt ,$idsalle=null,$id_prof=null, $cours=null, $idclasse=null){
+    public function __construct($idsalle=null,$id_prof=null, $idclasse=null, $cours=null, $date_edt ){
         $this->id_prof = $id_prof;
         $this->idsalle = $idsalle;
         $this->idclasse = $idclasse;
@@ -43,6 +43,7 @@ class EDT{
         $this->connect->end_connection();
     }
 };
-
+// $EDT1= new EDT(1,"P001","C001","MERISE","2024-02-11 14-00-03");
+// $EDT1->insert_edt();
 
 ?>

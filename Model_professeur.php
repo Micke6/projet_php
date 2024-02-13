@@ -17,6 +17,7 @@ class Profesor{
         $this->connect->start_connection();
         $requete=$this->connect->connex->prepare("INSERT INTO PROFESSEURS VALUES(?,?,?,?)");
         $requete->execute([$this->id_prof,$this->Name,$this->Firstname,$this->Grade]);
+        echo"Reussi!!";
         $this->connect->end_connection();
     }
 
@@ -46,13 +47,4 @@ class Profesor{
 
 
 };
-// $P1= new Profesor("P001","TATA","MONJa","Prof titulaire ");
-// $P1->insert_prof();
-$Name=$_POST["Name"];
-$id_prof=$_POST["id_prof"];
-$Firstname=$_POST["Firstname"];
-$Grade=$_POST["Grade"];
-$P2 = new Profesor($id_prof,$Name,$Firstname,$Grade);
-$P2->insert_prof();
-
 ?>
