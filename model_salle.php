@@ -45,7 +45,7 @@ class Salle{
         $this->connect->end_connection();
     }
 };
-// $S1= new Salle(1,"102","libre");
-// $S1->insert_salle(); 
+$S1= new Salle("102","libre");
+$S1->insert_salle(); 
 
 ?>
